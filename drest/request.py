@@ -308,7 +308,7 @@ class RequestHandler(meta.MetaMixin):
     def _clear_http(self):
         self._http = None
             
-    def _make_request(self, url, method, payload=None, headers=None):
+    def _make_request(self, url, method, payload="", headers=None):
         """
         A wrapper around httplib2.Http.request.
         
@@ -329,8 +329,6 @@ class RequestHandler(meta.MetaMixin):
                 Additional headers of the request.
                 
         """
-        if payload is None:
-            payload = {}
         if headers is None:
             headers = {}
 
